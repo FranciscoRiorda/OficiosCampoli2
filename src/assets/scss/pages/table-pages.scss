@@ -454,32 +454,11 @@ table.dataTable thead .sorting_desc_disabled {
     background: transparent;
 }
 
-table.dataTable thead .sorting_asc:after {
-    content: "\f0de";
-    margin-left: 10px;
-    font-family: fontawesome;
-    cursor: pointer;
-}
-
-table.dataTable thead .sorting_desc:after {
-    content: "\f0dd";
-    margin-left: 10px;
-    font-family: fontawesome;
-    cursor: pointer;
-}
-
-table.dataTable thead .sorting:after {
-    content: "\f0dc";
-    margin-left: 10px;
-    font-family: fontawesome !important;
-    cursor: pointer;
-    color: rgba(50, 50, 50, .5);
-}
-
 .dataTables_wrapper .dataTables_paginate {
     float: right;
     text-align: right;
-    padding-top: 0.25em
+    padding-top: 0.25em;
+    width: 100%;
 }
 
 .dataTables_wrapper .dataTables_paginate .paginate_button {
@@ -579,6 +558,15 @@ Table- editable table
     }
 }
 
+.tablesaw-columntoggle-popup{
+    [type="checkbox"]:not(:checked),
+    [type="checkbox"]:checked{
+        position: relative; 
+        left: 0; 
+        opacity: 1; 
+    }
+}
+
 /*******************
 Table-Jsgrid table
 ******************/
@@ -617,3 +605,64 @@ Table-Jsgrid table
 .jsgrid-pager-page.jsgrid-pager-current-page {
     padding: 0.5em 1em !important;
 }
+
+/*******************
+Footable Table
+******************/
+
+#demo-foo-accordion .open > .dropdown-menu {
+    display: block;
+}
+
+#demo-foo-accordion2 .open > .dropdown-menu {
+    display: block;
+}
+
+#footable-addrow .open > .dropdown-menu {
+    display: block;
+}
+
+table.footable{
+    thead{
+        tr.footable-filtering{
+            th{
+                ul.dropdown-menu{
+                    li{
+                        a.checkbox input[type=checkbox]{
+                            position: relative;
+                            margin-right: 10px;
+                            margin-left: -20px;
+                            left: 0;
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*******************
+Table Js-grid 
+******************/
+.jsgrid-cell{
+    [type="checkbox"]:not(:checked),
+    [type="checkbox"]:checked{
+        position: relative; 
+        left: 0; 
+        opacity: 1; 
+    }
+}
+
+/*******************
+Table Responsive
+******************/
+.jsgrid-cell{
+    [type="checkbox"]:not(:checked),
+    [type="checkbox"]:checked{
+        position: relative; 
+        left: 0; 
+        opacity: 1; 
+    }
+}
+

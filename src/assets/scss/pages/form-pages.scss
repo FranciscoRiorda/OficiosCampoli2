@@ -190,10 +190,6 @@ Form addons page
     }
 }
 
-.bootstrap-touchspin .input-group-btn-vertical>.btn {
-    padding: 9px 10px;
-}
-
 .select2-container--default {
     .select2-selection--single {
         border-color: $form-brd;
@@ -977,4 +973,64 @@ input[type=checkbox]:not(:disabled).tabbed:focus ~ .lever::after {
 }
 .validate .form-control{
     border-color:$success;
+}
+
+/*******************
+/*Image Cropper Page
+******************/
+
+.docs-buttons .btn,
+.docs-toggles .btn-group,
+.docs-data .input-group {
+  margin-bottom: 5px;
+}
+
+/*******************
+/*Form Typahead Page
+******************/
+
+.twitter-typeahead {
+    width: 100% 
+}
+
+.twitter-typeahead .tt-menu {
+    width: 100%;
+    background: $white;
+    border: 1px solid $muted;
+    border-radius: 5px;
+    padding: .75rem 0
+}
+
+.twitter-typeahead .tt-menu .tt-suggestion {
+    padding: .25rem .75rem;
+    cursor: pointer
+}
+
+.twitter-typeahead .tt-menu .tt-suggestion:hover {
+    background-color: $primary;
+    color: $white
+}
+
+.twitter-typeahead .empty-message {
+    padding: 5px 10px;
+    text-align: center
+}
+
+.twitter-typeahead .rtl-typeahead .tt-menu {
+    text-align: right
+}
+
+.twitter-typeahead .league-name {
+    margin: 0 10px 5px;
+    padding: 7px 5px 10px;
+    border-bottom: 1px solid $muted;
+}
+
+.scrollable-dropdown .twitter-typeahead .tt-menu {
+    max-height: 80px;
+    overflow-y: auto
+}
+
+.bootstrap-maxlength {
+    margin-top: .5rem
 }

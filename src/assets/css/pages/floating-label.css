@@ -28,6 +28,9 @@ File: scss
   font-family: "Montserrat", sans-serif;
   border-radius: 0px;
   border-bottom: 1px solid #e9edf2; }
+  .floating-labels .form-control:focus {
+    -webkit-box-shadow: none;
+    box-shadow: none; }
 
 .floating-labels select.form-control > option {
   font-size: 14px; }

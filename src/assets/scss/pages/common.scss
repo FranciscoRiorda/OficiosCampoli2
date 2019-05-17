@@ -206,6 +206,7 @@ File: scss
             border-radius: 0px;
             font-size: 17px;
             transition: 0.5s ease-in;
+            height: 73px;
             &:focus {
                 border-color: $white;
             }
@@ -565,7 +566,8 @@ ul#themecolors {
             position: relative;
             &.working:before {
                 content: "\f00c";
-                font-family: "FontAwesome";
+                font-family: 'Font Awesome 5 Free';
+                font-weight: 900;
                 font-size: 18px;
                 line-height: 50px;
                 width: 50px;
@@ -976,3 +978,18 @@ Notification page Jquery toaster
 .jq-icon-success {background-color: $success; color:$white;}
 .jq-icon-error {background-color: $danger; color:$white;}
 .jq-icon-warning{ background-color:$warning; color:$white;}
+
+
+/*******************
+form material page
+******************/
+.form-control-line 
+{
+    .form-control{
+        box-shadow:none;
+    }
+}
+
+.table-responsive>.table-bordered{
+    border: 1px solid $border;
+}

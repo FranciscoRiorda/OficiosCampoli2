@@ -312,4 +312,15 @@ File: scss
         margin-top: 10px;
         overflow: hidden;
     }
+
+    .dataTables_wrapper {
+        .dataTables_paginate {
+            width: 100%;
+            .paginate_button {
+                .page-link {
+                    padding: 0.5rem 0.6rem;
+                }
+            }
+        }
+    }
 }

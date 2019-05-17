@@ -34,7 +34,7 @@ Stylish tooltip
 .mytooltip {
   display: inline;
   position: relative;
-  z-index: 9999; }
+  z-index: 10; }
   .mytooltip:hover .tooltip-item::after {
     pointer-events: auto; }
   .mytooltip:hover .tooltip-content {

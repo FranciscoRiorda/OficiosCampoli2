@@ -36,7 +36,6 @@ User card page
         color: #398bf7; }
   .el-element-overlay .el-card-item .el-overlay-1 {
     width: 100%;
-    height: 100%;
     overflow: hidden;
     position: relative;
     text-align: center;

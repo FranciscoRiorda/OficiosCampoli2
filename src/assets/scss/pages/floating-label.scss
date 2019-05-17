@@ -23,6 +23,9 @@ File: scss
     font-family: $bodyfont;
     border-radius: 0px;
     border-bottom: 1px solid $light;
+     &:focus{
+        box-shadow:none;
+    }
 }
 
 .floating-labels select.form-control>option {

@@ -49,14 +49,19 @@ sidebar navigation
 ******************/
 
 .scroll-sidebar {
-    height: calc(100% - 70px);
-    &.ps .ps__scrollbar-y-rail {
-        left: 2px;
-        right: auto;
-        background: none;
-        width: 6px;
-        /* If using `left`, there shouldn't be a `right`. */
-    }
+    height: calc(100% - 20px);
+    position: relative;
+    // &.ps .ps__scrollbar-y-rail {
+    //     left: 2px;
+    //     right: auto;
+    //     background: none;
+    //     width: 6px;
+    //     /* If using `left`, there shouldn't be a `right`. */
+    // }
+    .ps-scrollbar-y-rail {
+        left: 2px !important;
+    } 
+
 }
 
 .collapse.in {
@@ -127,7 +132,7 @@ sidebar navigation
         }
         &.active {
             font-weight: 400;
-            background: $white;
+            background: #242933;
             color: $themecolor-alt;
         }
     }

@@ -868,3 +868,33 @@ Layouts
     max-width: 1170px;
     margin: 0 auto;
 }
+
+.progress{
+    height:auto;
+}
+.card-group{
+    margin-bottom: 30px;
+}
+
+// Perfect Scrollbar
+
+.ps-container {
+    -ms-touch-action: auto;
+    touch-action: auto;
+    overflow: hidden!important; 
+    -ms-overflow-style: none;
+}
+// For Table Responsive Page
+.tablesaw, 
+.fixed-table-container ,
+.fixed-table-toolbar .bs-bars, .fixed-table-toolbar .columns, .fixed-table-toolbar .search{
+    [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: relative;
+        left: 0;
+        opacity: 1;
+    }
+}  
+
+.fixed-table-toolbar .columns label {
+    color: $light-text !important;
+}
