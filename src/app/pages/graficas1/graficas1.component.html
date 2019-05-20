@@ -1,3 +1,77 @@
-<p>
-  graficas1 works!
-</p>
+<div class="row">
+
+    <div class="col-6">
+        <div class="card">
+            <div class="card-body">
+
+                <h4 class="card-title">{{graficos.grafico1.leyenda}}</h4>
+
+                <div>
+                    <div>
+
+                        <app-grafico-dona [doughnutChartLabels]="graficos.grafico1.labels" [doughnutChartData]="graficos.grafico1.data" [doughnutChartType]="graficos.grafico1.type"></app-grafico-dona>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-6">
+        <div class="card">
+            <div class="card-body">
+
+                <h4 class="card-title">{{graficos.grafico2.leyenda}}</h4>
+
+
+                <div>
+                    <div>
+
+                        <app-grafico-dona [doughnutChartLabels]="graficos.grafico2.labels" [doughnutChartData]="graficos.grafico2.data" [doughnutChartType]="graficos.grafico2.type"></app-grafico-dona>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+
+
+    <div class="col-6">
+        <div class="card">
+            <div class="card-body">
+
+                <h4 class="card-title">{{graficos.grafico3.leyenda}}</h4>
+
+
+                <div>
+                    <div>
+
+                        <app-grafico-dona [doughnutChartLabels]="graficos.grafico3.labels" [doughnutChartData]="graficos.grafico3.data" [doughnutChartType]="graficos.grafico3.type"></app-grafico-dona>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-6">
+        <div class="card">
+            <div class="card-body">
+
+                <h4 class="card-title">{{graficos.grafico4.leyenda}}</h4>
+
+
+                <div>
+                    <div>
+
+                        <app-grafico-dona [doughnutChartLabels]="graficos.grafico4.labels" [doughnutChartData]="graficos.grafico4.data" [doughnutChartType]="graficos.grafico4.type"></app-grafico-dona>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
