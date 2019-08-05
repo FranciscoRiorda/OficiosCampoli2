@@ -21,13 +21,16 @@ export class LoginComponent implements OnInit {
 
   auth2: any;
 
-  constructor( public router: Router, public _usuarioService: UsuarioService) { }
+  constructor(
+      public router: Router,
+      public _usuarioService: UsuarioService
+    ) { }
 
   ngOnInit() {
     init_plugins();
     this.googleInit();
 
-    this.email = localStorage.getItem('email') || "";
+    this.email = localStorage.getItem('email') || '';
     if (this.email.length > 1) {
       this.recordar = true;
     }
@@ -55,7 +58,7 @@ export class LoginComponent implements OnInit {
       let token = googleUser.getAuthResponse().id_token;
 
       this._usuarioService.loginGoogle(token)
-              .subscribe(() => window.location.href = '#/dashboard');
+              .subscribe( () => window.location.href = '#/dashboard');
 
     });
   }
