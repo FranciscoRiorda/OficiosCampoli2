@@ -1,6 +1,4 @@
 import { Injectable } from '@angular/core';
-import { resolve } from 'url';
-import { reject } from 'q';
 import { URL_SERVICIOS } from '../../config/config';
 
 @Injectable({
@@ -12,6 +10,7 @@ export class SubirArchivoService {
 
   subirArchivo( archivo: File, tipo: string, id: string) {
 
+
     return new Promise((resolve, reject) => {
 
       let formData = new FormData();
@@ -22,6 +21,7 @@ export class SubirArchivoService {
       xhr.onreadystatechange = function() {
 
         if (xhr.readyState === 4) {
+
           if (xhr.status === 200) {
             console.log('Imagen subida');
             resolve(JSON.parse(xhr.response));
