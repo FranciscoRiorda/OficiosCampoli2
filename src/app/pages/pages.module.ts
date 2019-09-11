@@ -29,6 +29,15 @@ import { RxjsComponent } from './rxjs/rxjs.component';
 import { ProfileComponent } from './profile/profile.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { ModalUploadComponent } from '../components/modal-upload/modal-upload.component';
+import { SedesComponent } from './sedes/sedes.component';
+import { SedeComponent } from './sedes/sede.component';
+import { CursosComponent } from './cursos/cursos.component';
+import { CursoComponent } from './cursos/curso.component';
+import { DocentesComponent } from './docentes/docentes.component';
+import { DocenteComponent } from './docentes/docente.component';
+import { CoordinadoresComponent } from './coordinadores/coordinadores.component';
+import { CoordinadorComponent } from './coordinadores/coordinador.component';
+
 
 
 
@@ -45,7 +54,15 @@ import { ModalUploadComponent } from '../components/modal-upload/modal-upload.co
         RxjsComponent,
         ProfileComponent,
         UsuariosComponent,
-        ModalUploadComponent
+        ModalUploadComponent,
+        SedesComponent,
+        CursosComponent,
+        SedeComponent,
+        CursoComponent,
+        DocentesComponent,
+        DocenteComponent,
+        CoordinadoresComponent,
+        CoordinadorComponent
     ],
     exports: [
         DashboardComponent,

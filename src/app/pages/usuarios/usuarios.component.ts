@@ -105,13 +105,11 @@ export class UsuariosComponent implements OnInit {
       confirmButtonText: 'Si'
     })
     .then (borrar => {
-      // console.log(borrar);
 
       if (borrar) {
 
         this._usuarioService.borrarUsuario(usuario._id)
               .subscribe(borrado => {
-                // console.log(borrado);
                 this.cargarUsuarios();
               });
 

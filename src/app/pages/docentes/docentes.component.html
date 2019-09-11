@@ -1,0 +1,80 @@
+<div class="row animated fadeIn">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+
+                <input #input (keyup)="buscarDocentes(input.value)" type="text" class="form-control" placeholder="Buscar docente...">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row animated fadeIn" *ngIf="cargando">
+
+    <div class="col-sm-12">
+
+        <div class="alert alert-warning text-center">
+            <strong>Cargando</strong>
+            <br>
+            <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+            <br>
+            <span>Espere por favor</span>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+
+                <div class="text-right">
+                    <button [routerLink]="['/docente','nuevo']" type="button" class="btn waves-effect waves-light btn-rounded btn-primary"><i class="fa fa-plus"></i> Crear Docente</button>
+                </div>
+
+                <h3 class="card-title">Docentes registrados (<small>{{_docenteService.totalDocentes}}</small>)</h3>
+
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Foto</th>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Curso</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr *ngFor="let docente of docentes">
+                            <td>
+                                <img [src]="docente.img | imagen: 'docente'" class="img-50 img-circle">
+                            </td>
+                            <td>
+                                {{docente.nombre}}
+                            </td>
+                            <td>
+                                {{docente.apellido}}
+                            </td>
+                            <td>
+                                {{docente.curso.nombre}}
+                            </td>
+                            <td>
+                                <button [routerLink]="['/docente', docente._id]" class="btn btn-primary">
+                                    <i class="fa fa-edit"></i>
+                                </button> &nbsp;
+                                <button (click)="borrarDocente(docente)" class="btn btn-danger">
+                                    <i class="fas fa-trash-alt"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>

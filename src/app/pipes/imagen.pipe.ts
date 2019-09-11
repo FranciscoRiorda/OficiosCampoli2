@@ -32,8 +32,16 @@ export class ImagenPipe implements PipeTransform {
           url += '/sedes/' + img;
         break;
 
+      case 'docente':
+          url += '/docentes/' + img;
+        break;
+
+      case 'coordinador':
+          url += '/coordinadores/' + img;
+        break;
+
         default:
-          console.log('Tipo de imagen no existe, usuarios, cursos, sedes');
+          console.log('Tipo de imagen no existe; usuarios, cursos, sedes, docentes, coordinadores');
           url += '/usuarios/xxx';
     }
 

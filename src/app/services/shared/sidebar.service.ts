@@ -24,6 +24,8 @@ export class SidebarService {
   submenu: [
     {titulo: 'Usuarios', url: '/usuarios'},
     {titulo: 'Sedes', url: '/sedes'},
+    {titulo: 'Cursos', url: '/cursos'},
+    {titulo: 'Coordinadores', url: '/coordinadores'},
     {titulo: 'Docentes', url: '/docentes'}
   ]
 }

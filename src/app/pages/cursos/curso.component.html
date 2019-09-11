@@ -1,0 +1,90 @@
+<div class="row animated fadeIn">
+
+    <div class="col-md-6">
+        <div class="card card-body">
+            <h3 class="box-title m-b-0">Curso: {{ curso.nombre }}</h3>
+            <div class="row">
+                <div class="col-sm-12 col-xs-12">
+                    <form #f="ngForm" ngNativeValidate (ngSubmit)="guardarCurso(f)">
+                        <div class="form-group">
+                            <label>Nombre</label>
+                            <input [(ngModel)]="curso.nombre" name="nombre" type="text" class="form-control" placeholder="Introducir Nombre" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Número de Certificación</label>
+                            <input [(ngModel)]="curso.numeroCertificacion" name="numeroCertificacion" type="text" class="form-control" placeholder="Introducir número de certificación" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Carga horaria</label>
+                            <input [(ngModel)]="curso.cargaHoraria" name="cargaHoraria" type="text" class="form-control" placeholder="Introducir carga horaria" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Fecha de inicio</label>
+                            <input [(ngModel)]="curso.fechaInicio" name="fechaInicio" type="text" class="form-control" placeholder="Introducir fecha de inicio" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Fecha de finalización</label>
+                            <input [(ngModel)]="curso.fechaFin" name="fechaFin" type="text" class="form-control" placeholder="introducir fecha de finalización" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Días de cursados</label>
+                            <input [(ngModel)]="curso.diasCursado" name="diasCursado" type="text" class="form-control" placeholder="Introducir días de cursado" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Horario de cursado</label>
+                            <input [(ngModel)]="curso.horarioCursado" name="horarioCursado" type="text" class="form-control" placeholder="Introducir horario de cursado" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Sector</label>
+                            <input [(ngModel)]="curso.sector" name="sector" type="text" class="form-control" placeholder="Introducir sector" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Trayecto formativo</label>
+                            <input [(ngModel)]="curso.trayectoFormativo" name="trayectoFormativo" type="text" class="form-control" placeholder="Introducir trayecto formativo" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Sede</label>
+                            <select (change)="cambioSede($event.target.value)" [(ngModel)]="curso.sede" [ngModelOptions]="{standalone: true}" name="sede" class="form-control" required>
+                              <option value="">Seleccione Sede</option>
+                              <option *ngFor="let sede of sedes" [value]="sede._id">
+                                {{sede.nombre}}
+                            </select>
+                        </div>
+
+                        <button type="submit" class="btn btn-success waves-effect waves-light m-r-10">
+                          <i class="fa fa-save"></i>
+                          Guardar
+                        </button>
+                        <a routerLink="/cursos" class="btn btn-inverse waves-effect waves-light">Cancelar</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card card-body">
+            <h4 class="box-title m-b-0">Sede</h4>
+
+            <img [src]="sede.img | imagen:'sede'" class="rounded img-fluid">
+        </div>
+    </div>
+
+    <div class="col-md-3" *ngIf="curso._id">
+        <div class="card card-body">
+            <h4 class="box-title m-b-0">Fotografía</h4>
+
+            <img (click)="cambiarFoto()" [src]="curso?.img | imagen:'curso'" class="img-circle img-fluid pointer">
+        </div>
+    </div>
+
+</div>

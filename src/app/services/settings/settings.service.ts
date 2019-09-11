@@ -32,7 +32,7 @@ ajustes: Ajustes = {
 
   aplicarTema(tema: string) {
 
-    let url = `assets/css/colors/${ tema }.css`;
+    const url = `assets/css/colors/${ tema }.css`;
     this._document.getElementById('tema').setAttribute('href', url);
 
     this.ajustes.tema = tema;

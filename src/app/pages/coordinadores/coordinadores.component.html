@@ -1,0 +1,68 @@
+<div class="row animated fadeIn">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+
+                <input #input (keyup)="buscarCoordinador( input.value )" type="text" class="form-control" placeholder="Buscar coordinador...">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+
+                <div class="text-right">
+                    <button [routerLink]="['/coordinador','nuevo']" type="button" class="btn waves-effect waves-light btn-rounded btn-primary">
+                    <i class="fa fa-plus"></i> 
+                    Crear Coordinador
+                  </button>
+                </div>
+
+                <h3 class="card-title">Coordinadores registrados ( <small> {{ _coordinadorService.totalCoordinadores }} </small> )</h3>
+
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Foto</th>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Sede</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let coordinador of coordinadores">
+                            <td>
+                                <img [src]="coordinador.img | imagen:'coordinador'" class="img-50 img-circle">
+                            </td>
+                            <td>
+                                {{ coordinador.nombre }}
+                            </td>
+                            <td>
+                                {{ coordinador.apellido }}
+                            </td>
+                            <td>
+                                {{ coordinador.sede.nombre }}
+                            </td>
+                            <td>
+                                <button [routerLink]="['/coordinador', coordinador._id ]" class="btn btn-primary">
+                                <i class="fa fa-edit"></i>
+                              </button> &nbsp;
+
+                                <button (click)="borrarCoordinador( coordinador )" class="btn btn-danger">
+                                <i class="fas fa-trash-alt"></i>
+                              </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>

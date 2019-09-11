@@ -1,0 +1,84 @@
+<div class="row animated fadeIn">
+
+    <div class="col-md-6">
+        <div class="card card-body">
+            <h3 class="box-title m-b-0">Coodinador: {{ coordinador.nombre }} {{coordinador.apellido}}</h3>
+            <div class="row">
+                <div class="col-sm-12 col-xs-12">
+                    <form #f="ngForm" ngNativeValidate (ngSubmit)="guardarCoordinador(f)">
+                        <div class="form-group">
+                            <label>Nombre del coordinador</label>
+                            <input [(ngModel)]="coordinador.nombre" name="nombre" type="text" class="form-control" placeholder="Nombre del coordinador" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Apellido del coordinador</label>
+                            <input [(ngModel)]="coordinador.apellido" name="apellido" type="text" class="form-control" placeholder="Apellido del coordinador" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>CUIT del coordinador</label>
+                            <input [(ngModel)]="coordinador.cuit" name="cuit" type="text" class="form-control" placeholder="CUIT del coordinador" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Teléfono del coordinador</label>
+                            <input [(ngModel)]="coordinador.telefono" name="telefono" type="text" class="form-control" placeholder="Teléfono del coordinador" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Domicilio del coordinador</label>
+                            <input [(ngModel)]="coordinador.domicilio" name="domicilio" type="text" class="form-control" placeholder="Domicilio del coordinador" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Carga horaria del coordinador</label>
+                            <input [(ngModel)]="coordinador.cargaHoraria" name="cargaHoraria" type="text" class="form-control" placeholder="Carga horaria del coordinador" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Honorarios del coordinador</label>
+                            <input [(ngModel)]="coordinador.honorarios" name="honorarios" type="text" class="form-control" placeholder="Honorarios del coordinador" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Sede</label>
+                            <select (change)="cambioSede( $event.target.value )" [(ngModel)]="coordinador.sede" name="sede" class="form-control" required>
+                              <option value="">Seleccione Sede</option>
+                              <option *ngFor="let sede of sedes" [value]="sede._id">
+                                {{ sede.nombre }}
+                              </option>
+                            </select>
+
+                        </div>
+
+
+                        <button type="submit" class="btn btn-success waves-effect waves-light m-r-10">
+                          <i class="fa fa-save"></i>
+                          Guardar
+                        </button>
+                        <a routerLink="/coordinadores" class="btn btn-inverse waves-effect waves-light">Cancelar</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-md-3">
+        <div class="card card-body">
+            <h4 class="box-title m-b-0">Sede</h4>
+
+            <img [src]="sede.img | imagen:'sede'" class="rounded img-fluid">
+        </div>
+    </div>
+
+    <div class="col-md-3" *ngIf="coordinador._id">
+        <div class="card card-body">
+            <h4 class="box-title m-b-0">Fotografía</h4>
+
+            <img (click)="cambiarFoto()" [src]="coordinador?.img | imagen:'coordinador'" class="img-circle img-fluid pointer">
+        </div>
+    </div>
+
+</div>
