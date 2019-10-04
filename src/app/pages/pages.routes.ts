@@ -8,6 +8,8 @@ import { RxjsComponent } from './rxjs/rxjs.component';
 import { AccoutSettingsComponent } from './accout-settings/accout-settings.component';
 
 import { LoginGuardGuard } from '../services/service.index';
+import { AdminGuard } from '../services/service.index';
+
 import { ProfileComponent } from './profile/profile.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { SedesComponent } from './sedes/sedes.component';
@@ -18,6 +20,7 @@ import { DocentesComponent } from './docentes/docentes.component';
 import { DocenteComponent } from './docentes/docente.component';
 import { CoordinadoresComponent } from './coordinadores/coordinadores.component';
 import { CoordinadorComponent } from './coordinadores/coordinador.component';
+import { BusquedaComponent } from './busqueda/busqueda.component';
 
 
 const pagesRoutes: Routes = [
@@ -33,9 +36,10 @@ const pagesRoutes: Routes = [
             {path: 'rxjs', component: RxjsComponent, data: {titulo: 'RxJs'}},
             {path: 'account-settings', component: AccoutSettingsComponent, data: {titulo: 'Ajustes del Tema'}},
             {path: 'perfil', component: ProfileComponent, data: {titulo: 'Perfil de usuario'}},
+            {path: 'busqueda/:termino', component: BusquedaComponent, data: {titulo: 'Buscador'}},
 
             //Mantenimientos
-            {path: 'usuarios', component: UsuariosComponent, data: {titulo: 'Mantenimiento de usuarios'}},
+            {path: 'usuarios', component: UsuariosComponent, canActivate: [AdminGuard], data: {titulo: 'Mantenimiento de usuarios'}},
             {path: 'sedes', component: SedesComponent, data: {titulo: 'Mantenimiento de sedes'}},
             {path: 'sede/:id', component: SedeComponent, data: {titulo: 'Actualización de sede'}},
             {path: 'cursos', component: CursosComponent, data: {titulo: 'Mantenimiento de cursos'}},

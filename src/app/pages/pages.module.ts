@@ -37,6 +37,7 @@ import { DocentesComponent } from './docentes/docentes.component';
 import { DocenteComponent } from './docentes/docente.component';
 import { CoordinadoresComponent } from './coordinadores/coordinadores.component';
 import { CoordinadorComponent } from './coordinadores/coordinador.component';
+import { BusquedaComponent } from './busqueda/busqueda.component';
 
 
 
@@ -62,7 +63,8 @@ import { CoordinadorComponent } from './coordinadores/coordinador.component';
         DocentesComponent,
         DocenteComponent,
         CoordinadoresComponent,
-        CoordinadorComponent
+        CoordinadorComponent,
+        BusquedaComponent
     ],
     exports: [
         DashboardComponent,

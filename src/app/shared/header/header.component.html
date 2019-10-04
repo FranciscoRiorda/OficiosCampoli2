@@ -11,16 +11,16 @@
                 <!-- Logo icon --><b>
                             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                             <!-- Dark Logo icon -->
-                            <img src="assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
+                            <img src="assets/images/trebol2.png" alt="homepage" class="dark-logo" />
                             <!-- Light Logo icon -->
-                            <img src="assets/images/logo-light-icon.png" alt="homepage" class="light-logo" />
+                            <img src="assets/images/trebol.png" alt="homepage" class="light-logo" />
                         </b>
                 <!--End Logo icon -->
                 <!-- Logo text --><span>
                          <!-- dark Logo text -->
-                         <img src="assets/images/logo-text.png" alt="homepage" class="dark-logo" />
+                         <img src="assets/images/logo-campoli2.png" alt="homepage" class="dark-logo" />
                          <!-- Light Logo text -->    
-                         <img src="assets/images/logo-light-text.png" class="light-logo" alt="homepage" /></span> </a>
+                         <img src="assets/images/logo-campoli.png" class="light-logo" alt="homepage" /></span> </a>
         </div>
         <!-- ============================================================== -->
         <!-- End Logo -->
@@ -43,8 +43,9 @@
                 <!-- Search -->
                 <!-- ============================================================== -->
                 <li class="nav-item hidden-xs-down search-box"> <a class="nav-link hidden-sm-down waves-effect waves-dark" href="javascript:void(0)"><i class="ti-search"></i></a>
-                    <form class="app-search">
-                        <input type="text" class="form-control" placeholder="Search & enter"> <a class="srh-btn"><i class="ti-close"></i></a> </form>
+                    <div class="app-search">
+                        <input #input (keyup.enter)="buscar(input.value)" type="text" class="form-control" placeholder="Buscar"> <a class="srh-btn"><i class="ti-close"></i></a>
+                    </div>
                 </li>
 
                 <!-- ============================================================== -->

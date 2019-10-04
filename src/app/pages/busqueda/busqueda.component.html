@@ -1,0 +1,117 @@
+<div class="row">
+
+
+    <div class="col-6">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Sedes</h4>
+
+                <table class="table table-hover" *ngIf="sedes.length > 0">
+                    <tbody>
+                        <tr *ngFor="let sede of sedes" [routerLink]="['/sede', sede._id]" class="pointer">
+                            <td>
+                                <img [src]="sede.img | imagen: 'sede'" class="img-50 img-circle">
+                            </td>
+                            <td>{{sede.nombre}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="alert alert-info" *ngIf="sedes.length === 0">
+                    No hay registros
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-6">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Cursos</h4>
+
+                <table class="table table-hover" *ngIf="cursos.length > 0">
+                    <tbody>
+                        <tr *ngFor="let curso of cursos" [routerLink]="['/curso', curso._id]" class="pointer">
+                            <td>
+                                <img [src]="curso.img | imagen: 'curso'" class="img-50 img-circle">
+                            </td>
+                            <td>{{curso.nombre}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="alert alert-info" *ngIf="cursos.length === 0">
+                    No hay registros
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="col-6">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Docentes</h4>
+
+                <table class="table table-hover" *ngIf="docentes.length > 0">
+                    <tbody>
+                        <tr *ngFor="let docente of docentes" [routerLink]="['/docente', docente._id]" class="pointer">
+                            <td>
+                                <img [src]="docente.img | imagen: 'docente'" class="img-50 img-circle">
+                            </td>
+                            <td>{{docente.nombre}}</td>
+                            <td>{{docente.apellido}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="alert alert-info" *ngIf="docentes.length === 0">
+                    No hay registros
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-6">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Coordinadores</h4>
+
+                <table class="table table-hover" *ngIf="coordinadores.length > 0">
+                    <tbody>
+                        <tr *ngFor="let coordinador of coordinadores" [routerLink]="['/coordinador', coordinador._id]" class="pointer">
+                            <td>
+                                <img [src]="coordinador.img | imagen: 'coordinador'" class="img-50 img-circle">
+                            </td>
+                            <td>{{coordinador.nombre}}</td>
+                            <td>{{coordinador.apellido}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="alert alert-info" *ngIf="coordinadores.length === 0">
+                    No hay registros
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-6">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Usuarios</h4>
+
+                <table class="table table-hover" *ngIf="usuarios.length > 0">
+                    <tbody>
+                        <tr *ngFor="let usuario of usuarios" [routerLink]="['/usuarios']" class="pointer">
+                            <td>
+                                <img [src]="usuario.img | imagen" class="img-50 img-circle">
+                            </td>
+                            <td>{{usuario.nombre}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="alert alert-info" *ngIf="usuarios.length === 0">
+                    No hay registros
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
