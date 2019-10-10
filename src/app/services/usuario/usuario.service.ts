@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 import { SubirArchivoService } from '../subir-archivo/subir-archivo.service';
 import { ImagenPipe } from '../../pipes/imagen.pipe';
 import { text } from '@angular/core/src/render3';
-import { of } from 'rxjs';
+import { of, throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -28,6 +28,35 @@ export class UsuarioService {
     public _subirArchivoService: SubirArchivoService
     ) {
      this.cargarStorage();
+   }
+
+   renuevaToken() {
+
+    let url = URL_SERVICIOS + '/login/renuevatoken';
+    url += '?token=' + this.token;
+
+    return this.http.get(url)
+        .pipe(
+          map((resp: any) => {
+            this.token = resp.token;
+            localStorage.setItem('token', this.token);
+
+            console.log('Token renovado');
+
+            return true;
+          })
+          )
+          .pipe(
+            catchError(err => {
+              this.router.navigate(['/login']);
+              Swal.fire('Error', 'No fue posible renovar el token', 'error');
+              this.logout();
+
+              return throwError(err);
+
+        })
+          );
+
    }
 
    estaLogueado() {
@@ -83,7 +112,7 @@ export class UsuarioService {
 
    loginGoogle(token: string) {
 
-    let url = URL_SERVICIOS + '/login/google';
+    const url = URL_SERVICIOS + '/login/google';
 
     return this.http.post(url, {token})
         .pipe(
@@ -103,7 +132,7 @@ export class UsuarioService {
       localStorage.removeItem('email');
     }
 
-    let url = URL_SERVICIOS + '/login';
+    const url = URL_SERVICIOS + '/login';
     return this.http.post(url, usuario)
         .pipe(
           map((resp: any) => {
@@ -112,7 +141,7 @@ export class UsuarioService {
             return true;
         }))
         .pipe(
-          catchError( err => 
+          catchError( err =>
             of([
               console.log('HTTP Error', err.status),
               Swal.fire(
@@ -126,7 +155,7 @@ export class UsuarioService {
 
    crearUsuario(usuario: Usuario) {
 
-    let url = URL_SERVICIOS + '/usuario';
+    const url = URL_SERVICIOS + '/usuario';
 
     return this.http.post(url, usuario)
         .pipe(
@@ -139,7 +168,7 @@ export class UsuarioService {
               return resp.usuario;
             }))
             .pipe(
-              catchError( err => 
+              catchError( err =>
                 of([
                   console.log('HTTP Error', err.status),
                   Swal.fire(
@@ -161,7 +190,7 @@ export class UsuarioService {
           map((resp: any) => {
 
             if (usuario._id === this.usuario._id) {
-              let usuarioDB: Usuario = resp.usuario;
+              const usuarioDB: Usuario = resp.usuario;
               this.guardarStorage(usuarioDB._id, this.token, usuarioDB, this.menu);
             }
             Swal.fire({
@@ -172,7 +201,7 @@ export class UsuarioService {
             return true;
       }))
       .pipe(
-        catchError( err => 
+        catchError( err =>
           of([
             console.log('HTTP Error', err.status),
             Swal.fire(
@@ -204,14 +233,14 @@ export class UsuarioService {
 
   cargarUsuarios(desde: number = 0) {
 
-    let url = URL_SERVICIOS + '/usuario?desde=' + desde;
+    const url = URL_SERVICIOS + '/usuario?desde=' + desde;
 
     return this.http.get(url);
   }
 
   buscarUsuarios(termino: string) {
 
-    let url = URL_SERVICIOS + '/busqueda/coleccion/usuarios/' + termino;
+    const url = URL_SERVICIOS + '/busqueda/coleccion/usuarios/' + termino;
     return this.http.get(url)
         .pipe(
           map((resp: any) => resp.usuarios)

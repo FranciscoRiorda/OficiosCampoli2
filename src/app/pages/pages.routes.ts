@@ -21,15 +21,16 @@ import { DocenteComponent } from './docentes/docente.component';
 import { CoordinadoresComponent } from './coordinadores/coordinadores.component';
 import { CoordinadorComponent } from './coordinadores/coordinador.component';
 import { BusquedaComponent } from './busqueda/busqueda.component';
+import { VerificaTokenGuard } from '../services/guards/verifica-token.guard';
 
 
 const pagesRoutes: Routes = [
-    {
-        path: '',
-        component: PagesComponent,
-        canActivate: [LoginGuardGuard],
-        children: [
-            {path: 'dashboard', component: DashboardComponent, data: {titulo: 'Dashboard'}},
+            {
+                path: 'dashboard',
+                component: DashboardComponent,
+                canActivate: [VerificaTokenGuard],
+                data: {titulo: 'Dashboard'}
+            },
             {path: 'progress', component: ProgressComponent, data: {titulo: 'Progress'}},
             {path: 'graficas1', component: Graficas1Component, data: {titulo: 'Graficas'}},
             {path: 'promesas', component: PromesasComponent, data: {titulo: 'Promesas'}},
@@ -49,8 +50,7 @@ const pagesRoutes: Routes = [
             {path: 'coordinadores', component: CoordinadoresComponent, data: {titulo: 'Mantenimiento de coordinadores'}},
             {path: 'coordinador/:id', component: CoordinadorComponent, data: {titulo: 'Actualizar Coordindador'}},
             {path: '', redirectTo: '/dashboard', pathMatch: 'full'}
-        ]
-        },
+
 ];
 
 

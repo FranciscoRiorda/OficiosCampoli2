@@ -14,7 +14,8 @@ import {
   SedeService,
   CursoService,
   DocenteService,
-  CoordinadorService
+  CoordinadorService,
+  VerificaTokenGuard
 } from './service.index';
 
 @NgModule({
@@ -35,7 +36,8 @@ import {
     SedeService,
     CursoService,
     DocenteService,
-    CoordinadorService
+    CoordinadorService,
+    VerificaTokenGuard
   ]
 })
 export class ServiceModule { }
